@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Chat - Messages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-app">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <span id="current-user-name">読み込み中...</span>
+                <button id="logout-btn">ログアウト</button>
+            </header>
+            <ul id="user-list" class="user-list">
+                </ul>
+        </aside>
+
+        <main class="chat-main">
+            <header id="chat-header" class="chat-header">
+                <h2 id="target-user-name">ユーザーを選択してください</h2>
+            </header>
+
+            <div id="message-container" class="message-container">
+                </div>
+
+            <form id="chat-form" class="chat-form hidden">
+                <input type="text" id="message-input" placeholder="メッセージを入力..." required autocomplete="off">
+                <button type="submit" class="send-btn">送信</button>
+            </form>
+        </main>
+    </div>
+
+    <script type="module" src="chat.js"></script>
+</body>
+</html>

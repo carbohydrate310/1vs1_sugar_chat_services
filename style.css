@@ -68,3 +68,127 @@ input {
 #switch-mode { color: var(--primary-color); cursor: pointer; text-decoration: underline; }
 
 .hidden { display: none; }
+
+/* チャット画面全体のレイアウト */
+.chat-app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+}
+
+/* サイドバー */
+.sidebar {
+    width: 300px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+}
+
+.sidebar-header {
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-list {
+    list-style: none;
+    overflow-y: auto;
+}
+
+.user-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.user-item:hover { background: #eef2f5; }
+.user-item.active { background: #e0e7ff; font-weight: bold; }
+
+/* メインチャットエリア */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.chat-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+}
+
+.message-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f0f2f5;
+}
+
+/* メッセージの泡 */
+.msg {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.msg.sent {
+    align-self: flex-end;
+    background: var(--primary-color);
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.msg.received {
+    align-self: flex-start;
+    background: white;
+    color: var(--text-color);
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.msg-time {
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4d4f;
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-left: 8px;
+    text-decoration: underline;
+}
+
+/* 入力エリア */
+.chat-form {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid var(--border-color);
+}
+
+#message-input { flex: 1; }
+.send-btn { width: auto; margin-top: 0; padding: 0 20px; }
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+    .sidebar { width: 80px; }
+    .sidebar-header span, .logout-btn { display: none; }
+    .user-item { text-align: center; font-size: 0.8rem; }
+}
